@@ -5,21 +5,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <title>Reflected XSS</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body>
@@ -33,7 +24,7 @@
           <div class="menu"><a>Giới thiệu</a></div>
           <div class="menu"><a>Top 10 OWASP</a></div>
           <div class="menu"><a>Mức bảo mật</a></div>
-          <div class="menu" style="margin-top: 300px;"><a>About</a></div>
+          <div class="menu" style="margin-top: 245px;"><a>About</a></div>
           <div class="menu"><a>Logout</a></div>
         </div>
 
@@ -54,10 +45,9 @@
                   </div>
                   <button type="submit" class="btn btn-primary">Tìm</button>
                 </form>
-                <?php if($search): ?>
-                    <p><span>Kết quả:</span><?php echo $search ?></p>
-                <?php endif; ?>
-
+                @if($search)
+                <p><span>Kết quả:</span><?php echo $search ?></p>
+                @endif
               </div>
               <button class="viewSourceAttack">View Source</button>
 
@@ -115,4 +105,3 @@
 </body>
 
 </html>
-<?php /**PATH /var/www/resources/views/xss/relectedXss.blade.php ENDPATH**/ ?>

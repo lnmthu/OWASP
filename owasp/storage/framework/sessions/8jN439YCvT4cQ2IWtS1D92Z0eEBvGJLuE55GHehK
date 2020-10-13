@@ -1,1 +1,0 @@
-a:3:{s:6:"_token";s:40:"EkA2MFZLvhkA1gTcuFQc74jZfePBhfz29ZuEUWYM";s:9:"_previous";a:1:{s:3:"url";s:87:"http://localhost/reflected-xss?search=%3Cscript%3Ealert%28%22hello%22%29%3C%2Fscript%3E";}s:6:"_flash";a:2:{s:3:"old";a:0:{}s:3:"new";a:0:{}}}
