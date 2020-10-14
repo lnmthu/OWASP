@@ -50,11 +50,17 @@ QUEUE_HOST=beanstalkd
 
 #### Docker
 ```sh
-# Run your containers:
+# Clone the laradock 
+git clone https://github.com/Laradock/laradock.git
 cd laradock
+
+# Enter the laradock folder and rename env-example to .env
+cp env-example .env
+
+# Run your containers:
 docker-compose up -d nginx mysql phpmyadmin redis workspace 
 ```
-#### Build on develop
+#### Build on develop (option for developer)
 ```sh
 # Install node modules
 npm install
