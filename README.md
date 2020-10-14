@@ -53,7 +53,7 @@ QUEUE_HOST=beanstalkd
 # Run your containers:
 docker-compose up -d nginx mysql phpmyadmin redis workspace 
 ```
-Build on develop
+#### Build on develop
 ```sh
 # Install node modules
 npm install
