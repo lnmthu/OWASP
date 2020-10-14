@@ -39,7 +39,7 @@ git clone https://github.com/lnmthu/OWASP.git
 cd OWASP
 
 # Rename env-example to .env.
-cp env-example .env
+cp .env-example .env
 
 # Open OWASP project’s .env file and set the following:
 DB_HOST=mysql
@@ -55,7 +55,7 @@ git clone https://github.com/Laradock/laradock.git
 cd laradock
 
 # Enter the laradock folder and rename env-example to .env
-cp env-example .env
+cp .env-example .env
 
 # Run your containers:
 docker-compose up -d nginx mysql phpmyadmin redis workspace 
