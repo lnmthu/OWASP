@@ -35,7 +35,7 @@
 
 ```bash
 # Clone the project 
-git clone https://github.com/lnmthu/OSWAP.git
+git clone https://github.com/lnmthu/OWASP.git
 cd OWASP
 
 # Rename env-example to .env.
