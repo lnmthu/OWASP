@@ -1,65 +1,106 @@
-<<<<<<< HEAD
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img width="320" src="https://owasp.org/assets/images/logo.png">
+</p>
+<p align="center">
+  <a href="https://laravel.com">
+    <img src="https://img.shields.io/badge/laravel-7.3-brightgreen.svg" alt="laravel">
+  </a>
+  <a href="https://github.com/vuejs/vue">
+    <img src="https://img.shields.io/badge/vue-2.6.10-brightgreen.svg" alt=";laradock">
+  </a>
+  </a>
 </p>
 
-## About Laravel
+# OWASP Framwork
+<!-- [Laravue](https://laravue.dev) (pronounced /ˈlarəvjuː/) is a beautiful dashboard combination of [Laravel](https://laravel.com/), [Vue.js](https://github.com/vuejs/vue) and the UI Toolkit [Element](https://github.com/ElemeFE/element). The work is inspired by  [vue-element-admin](http://panjiachen.github.io/vue-element-admin) with our love on top of that. With the powerful Laravel framework as the backend, Vue.js as the high performance on the frontend,  Laravue appears to be a full-stack solution for an enterprise application level. -->
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<!-- Documentation: [https://doc.laravue.dev](https://doc.laravue.dev)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Screenshot
+<p align="center">
+  <img width="900" src="https://cdn.laravue.dev/screenshot.png">
+</p> -->
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Getting started
 
-## Learning Laravel
+### Prerequisites
+<!-- 
+ * Laravue is positioned as an enterprise management solution, and it is highly recommended to use it to start from scratch.
+ * For existing Laravel project, you should check [Laravue Core](https://github.com/tuandm/laravue-core) for integration.
+ * Your machine needs to be ready for the latest [Laravel](https://laravel.com/docs/6.x#installation) and [Node.js](https://nodejs.org). -->
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Installing
+#### Manual
 
-## Laravel Sponsors
+```bash
+# Clone the project 
+git clone https://github.com/lnmthu/OSWAP.git
+cd OWASP
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+# Rename env-example to .env.
+cp env-example .env
 
-### Premium Partners
+# Open OWASP project’s .env file and set the following:
+DB_HOST=mysql
+REDIS_HOST=redis
+QUEUE_HOST=beanstalkd
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+```
 
-## Contributing
+#### Docker
+```sh
+# Run your containers:
+docker-compose up -d nginx mysql phpmyadmin redis workspace 
+```
+Build on develop
+```sh
+# Install node modules
+npm install
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# Build on develop
+npm run dev
+```
+Open http://localhost to access OWASP Framework
 
-## Code of Conduct
+<!-- ## Running the tests
+* Tests system is under development -->
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<!-- ## Deployment and/or CI/CD
+This project uses [Envoy](https://laravel.com/docs/5.8/envoy) for deployment, and [GitLab CI/CD](https://about.gitlab.com/product/continuous-integration/). Please check `Envoy.blade.php` and `.gitlab-ci.yml` for more detail. -->
 
-## Security Vulnerabilities
+## Built with
+* [Laravel](https://laravel.com/) - The PHP Framework For Web Artisans
+* [Laradock](https://laradock.io/introduction/) - A full PHP development environment for Docker 
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<!-- ## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, please look at the [release tags](https://github.com/tuandm/laravue/tags) on this repository. -->
+
+## Authors
+
+* **Minh Thu** - *Initial work* - [lnmthu](https://github.com/lnmthu).
+* **Nhu Quynh** - *Designer* - [quinhuyn](https://github.com/quinhuyn).
+<!-- 
+See also the list of [contributors](https://github.com/tuandm/laravue/contributors) who participated in this project.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-=======
-# OSWAP
->>>>>>> 0d347f3c7b69baf3656d6c5720bafd2d34807f7d
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
+
+## Related projects
+
+* [Laravue-core](https://github.com/tuandm/laravue-core) - Laravel package which provides core functionalities of Laravue.
+
+## Acknowledgements
+
+* [vue-element-admin](https://panjiachen.github.io/vue-element-admin/#/) A magical vue admin which insprited Laravue project.
+* [tui.editor](https://github.com/nhnent/tui.editor) - Markdown WYSIWYG Editor.
+* [Echarts](http://echarts.apache.org/) - A powerful, interactive charting and visualization library for browser.
+
+## Donate
+If you find this project useful, you can [buy me a coffee](https://www.buymeacoffee.com/tuandm) -->

@@ -6,10 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Reflected XSS</title>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" >
+  <link type="text/css" rel="stylesheet" href="css/bootstrap-theme.min.css" >
+  <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css" >
+  <link type="text/css" rel="stylesheet" href="css/style.css" >
+  <base href="{{asset('')}}">
 
 </head>
 
@@ -38,7 +39,7 @@
                 <p>Shopping Online</p>
               </div>
               <div class="contentForm">
-                <form class="form-inline" action="" method="POST" role="form">
+                <form class="form-inline" action="" method="get" role="form">
                   <div class="form-group">
                     <label for="">Tìm kiếm</label>
                     <input name="search" type="text" class="form-control" id="" placeholder="Nhập từ khoá">
