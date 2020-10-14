@@ -3,10 +3,10 @@
 </p>
 <p align="center">
   <a href="https://laravel.com">
-    <img src="https://img.shields.io/badge/laravel-7.3-brightgreen.svg" alt="laravel">
+    <img src="https://img.shields.io/badge/laravel-8.0-brightgreen.svg" alt="laravel">
   </a>
   <a href="https://github.com/vuejs/vue">
-    <img src="https://img.shields.io/badge/vue-2.6.10-brightgreen.svg" alt=";laradock">
+    <img src="https://img.shields.io/badge/laradock-8.0-brightgreen.svg" alt="laradock">
   </a>
   </a>
 </p>
