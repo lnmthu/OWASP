@@ -63,6 +63,7 @@ docker-compose up -d nginx mysql phpmyadmin redis workspace
 #### Build on develop (option for developer)
 ```sh
 # Install node modules
+cd ..
 npm install
 
 # Build on develop
