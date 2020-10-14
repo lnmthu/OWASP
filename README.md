@@ -51,6 +51,7 @@ QUEUE_HOST=beanstalkd
 #### Docker
 ```sh
 # Run your containers:
+cd laradock
 docker-compose up -d nginx mysql phpmyadmin redis workspace 
 ```
 #### Build on develop
