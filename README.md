@@ -39,7 +39,7 @@ git clone https://github.com/lnmthu/OWASP.git
 cd OWASP
 
 # Rename env-example to .env.
-cp .env-example .env
+cp .env.example .env
 
 # Open OWASP project’s .env file and set the following:
 DB_HOST=mysql
@@ -91,7 +91,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Minh Thu** - *Initial work* - [lnmthu](https://github.com/lnmthu).
+* **Minh Thu** - *Back-end Developer* - [lnmthu](https://github.com/lnmthu).
 * **Nhu Quynh** - *Designer* - [quinhuyn](https://github.com/quinhuyn).
 <!-- 
 See also the list of [contributors](https://github.com/tuandm/laravue/contributors) who participated in this project.
