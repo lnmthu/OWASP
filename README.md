@@ -36,6 +36,7 @@
 ```bash
 # Clone the project 
 git clone https://github.com/lnmthu/OWASP.git
+php artisan key:generate
 cd OWASP
 
 # Rename env-example to .env.
@@ -91,7 +92,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Minh Thu** - *Back-end Developer* - [lnmthu](https://github.com/lnmthu).
+* **Minh Thu** - *Backend Developer* - [lnmthu](https://github.com/lnmthu).
 * **Nhu Quynh** - *Designer* - [quinhuyn](https://github.com/quinhuyn).
 <!-- 
 See also the list of [contributors](https://github.com/tuandm/laravue/contributors) who participated in this project.
