@@ -127,6 +127,7 @@
     border: 1px solid black;
     overflow: scroll;
     border-top: 3px solid;
+    position: relative;
 }
 .barRight .content .guide{
     margin: 10px;
@@ -159,4 +160,10 @@
     background: white;
     padding-right: 15px;
     padding-left: 15px;
+}
+
+.popover{
+    width:200px;
+    height:250px;    
+    overflow: scroll;
 }

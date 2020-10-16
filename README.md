@@ -92,8 +92,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Minh Thu** - *Backend Developer* - [lnmthu](https://github.com/lnmthu).
-* **Nhu Quynh** - *Designer* - [quinhuyn](https://github.com/quinhuyn).
+* **Minh Thu** - *Web Developer* - [lnmthu](https://github.com/lnmthu).
+* **Nhu Quynh** - *Web Security and Designer* - [quinhuyn](https://github.com/quinhuyn).
 <!-- 
 See also the list of [contributors](https://github.com/tuandm/laravue/contributors) who participated in this project.
 

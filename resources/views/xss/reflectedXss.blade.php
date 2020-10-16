@@ -50,7 +50,10 @@
                 <p><span>Kết quả:</span><?php echo $search?></p>
                 @endif
               </div>
-              <button class="viewSourceAttack">View Source</button>
+
+              <button 
+             type="button" data-toggle="popover" data-placement="left" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"
+              class="viewSourceAttack">View Source</button>
 
             </div>
           </div>
@@ -66,40 +69,41 @@
             <div class="guide">
               <p class="symbol">A</p>
               <p class="document"><span class="step">1</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nesciunt fugiat, libero repellendus quam necessitatibus incidunt vitae maxime! Quam optio quo quis magni voluptates! Soluta, quis aliquam! Officia, veritatis neque.</p>
-              <button class="help">?</button>
+              <button class="help" type="button" data-toggle="popover" data-placement="left" title="Popover title"
+               data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.">?</button>
+            </div>
+            
+            <div class="guide">
+              <p class="symbol">A</p>
+              <p class="document"><span class="step">1</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nesciunt fugiat, libero repellendus quam necessitatibus incidunt vitae maxime! Quam optio quo quis magni voluptates! Soluta, quis aliquam! Officia, veritatis neque.</p>
+              <button class="help" type="button" data-toggle="popover" data-placement="left" title="Popover title"
+               data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.">?</button>
             </div>
             <div class="guide">
               <p class="symbol">A</p>
-              <p class="document"><span class="step">2</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nesciunt fugiat, libero repellendus quam necessitatibus incidunt vitae maxime! Quam optio quo quis magni voluptates! Soluta, quis aliquam! Officia, veritatis neque.</p>
-              <button class="help">?</button>
+              <p class="document"><span class="step">1</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nesciunt fugiat, libero repellendus quam necessitatibus incidunt vitae maxime! Quam optio quo quis magni voluptates! Soluta, quis aliquam! Officia, veritatis neque.</p>
+              <button class="help" type="button" data-toggle="popover" data-placement="left" title="Popover title"
+               data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.">?</button>
             </div>
             <div class="guide">
               <p class="symbol">A</p>
-              <p class="document"><span class="step">3</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nesciunt fugiat, libero repellendus quam necessitatibus incidunt vitae maxime! Quam optio quo quis magni voluptates! Soluta, quis aliquam! Officia, veritatis neque.</p>
-              <button class="help">?</button>
+              <p class="document"><span class="step">1</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nesciunt fugiat, libero repellendus quam necessitatibus incidunt vitae maxime! Quam optio quo quis magni voluptates! Soluta, quis aliquam! Officia, veritatis neque.</p>
+              <button class="help" type="button" data-toggle="popover" data-placement="left" title="Popover title"
+               data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.">?</button>
             </div>
             <div class="guide">
               <p class="symbol">A</p>
-              <p class="document"><span class="step">4</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nesciunt fugiat, libero repellendus quam necessitatibus incidunt vitae maxime! Quam optio quo quis magni voluptates! Soluta, quis aliquam! Officia, veritatis neque.</p>
-              <button class="help">?</button>
+              <p class="document"><span class="step">1</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nesciunt fugiat, libero repellendus quam necessitatibus incidunt vitae maxime! Quam optio quo quis magni voluptates! Soluta, quis aliquam! Officia, veritatis neque.</p>
+              <button class="help" type="button" data-toggle="popover" data-placement="left" title="Popover title"
+               data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.">?</button>
             </div>
-            <div class="guide">
-              <p class="symbol">A</p>
-              <p class="document"><span class="step">5</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nesciunt fugiat, libero repellendus quam necessitatibus incidunt vitae maxime! Quam optio quo quis magni voluptates! Soluta, quis aliquam! Officia, veritatis neque.</p>
-              <button class="help">?</button>
-            </div>
-            <div class="guide">
-              <p class="symbol">A</p>
-              <p class="document"><span class="step">6</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nesciunt fugiat, libero repellendus quam necessitatibus incidunt vitae maxime! Quam optio quo quis magni voluptates! Soluta, quis aliquam! Officia, veritatis neque.</p>
-              <button class="help">?</button>
-            </div>
+            
         
           </div>
 
         </div>
       </div>
   </div>
-
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
