@@ -36,8 +36,8 @@
 ```bash
 # Clone the project 
 git clone https://github.com/lnmthu/OWASP.git
-php artisan key:generate
 cd OWASP
+php artisan key:generate
 
 # Rename env-example to .env.
 cp .env.example .env
