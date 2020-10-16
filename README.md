@@ -12,8 +12,7 @@
 </p>
 
 # OWASP Framwork
-<!-- [Laravue](https://laravue.dev) (pronounced /ˈlarəvjuː/) is a beautiful dashboard combination of [Laravel](https://laravel.com/), [Vue.js](https://github.com/vuejs/vue) and the UI Toolkit [Element](https://github.com/ElemeFE/element). The work is inspired by  [vue-element-admin](http://panjiachen.github.io/vue-element-admin) with our love on top of that. With the powerful Laravel framework as the backend, Vue.js as the high performance on the frontend,  Laravue appears to be a full-stack solution for an enterprise application level. -->
-
+It is a framework that helps users and developers understand 10 common web attacks listed by OWASP
 <!-- Documentation: [https://doc.laravue.dev](https://doc.laravue.dev)
 
 ## Screenshot
@@ -24,10 +23,7 @@
 ## Getting started
 
 ### Prerequisites
-<!-- 
- * Laravue is positioned as an enterprise management solution, and it is highly recommended to use it to start from scratch.
- * For existing Laravel project, you should check [Laravue Core](https://github.com/tuandm/laravue-core) for integration.
- * Your machine needs to be ready for the latest [Laravel](https://laravel.com/docs/6.x#installation) and [Node.js](https://nodejs.org). -->
+ Docker Desktop is an application for MacOS and Windows machines for the building and sharing of containerized applications
 
 
 ### Installing
@@ -37,6 +33,8 @@
 # Clone the project 
 git clone https://github.com/lnmthu/OWASP.git
 cd OWASP
+
+# Generate key 
 php artisan key:generate
 
 # Rename env-example to .env.
