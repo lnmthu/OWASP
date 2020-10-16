@@ -30,11 +30,11 @@ It is a framework that helps users and developers understand 10 common web attac
 #### Manual
 
 ```bash
-# Clone the project and enter the OWASP folder
+# Clone the project 
 git clone https://github.com/lnmthu/OWASP.git
-cd OWASP
 
-# Generate key 
+# Enter the OWASP folder and generate key 
+cd OWASP
 php artisan key:generate
 
 # Rename env-example to .env.
