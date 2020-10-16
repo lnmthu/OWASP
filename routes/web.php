@@ -17,3 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get("reflected-xss","XssController@reflectedXss");
+Route::get("login","AuthController@getLogin");
+Route::get("register","AuthController@getRegister");

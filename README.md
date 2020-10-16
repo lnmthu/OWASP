@@ -42,8 +42,13 @@ cp .env.example .env
 
 # Open OWASP project’s .env file and set the following:
 DB_HOST=mysql
+DB_DATABASE=default
+DB_USERNAME=default
+DB_PASSWORD=secret
 REDIS_HOST=redis
 QUEUE_HOST=beanstalkd
+
+
 
 ```
 
@@ -58,15 +63,21 @@ cp env-example .env
 
 # Run your containers:
 docker-compose up -d nginx mysql phpmyadmin redis workspace 
+
+# Enter the Workspace container
+docker-compose exec workspace bash
+
+# Create database
+php artisan migrate --seed
+
 ```
-#### Build on develop (option for developer)
+#### Build on develop (Option for Developer)
 ```sh
 # Install node modules
-cd ..
 npm install
 
 # Build on develop
-npm run dev
+npm run watch
 ```
 Open http://localhost to access OWASP Framework
 

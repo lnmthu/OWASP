@@ -23,8 +23,8 @@
           <div class="icon"><a>Biểu tượng Web</a></div>
           <div class="menu"><a>Trang chủ</a></div>
           <div class="menu"><a>Giới thiệu</a></div>
-          <div class="menu"><a>Top 10 OWASP</a></div>
           <div class="menu"><a>Mức bảo mật</a></div>
+          <div class="menu"><a>Top 10 OWASP</a></div>
           <div class="menu" style="margin-top: 245px;"><a>About</a></div>
           <div class="menu"><a>Logout</a></div>
         </div>
@@ -68,7 +68,7 @@
           <div class="content">
             <div class="guide">
               <p class="symbol">A</p>
-              <p class="document"><span class="step">1</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nesciunt fugiat, libero repellendus quam necessitatibus incidunt vitae maxime! Quam optio quo quis magni voluptates! Soluta, quis aliquam! Officia, veritatis neque.</p>
+              <p class="document"><span class="step">1</span>Bobby để ý trang web <span>shopping</span> có trường tìm kiếm</p>
               <button class="help" type="button" data-toggle="popover" data-placement="left" title="Popover title"
                data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.">?</button>
             </div>
@@ -76,19 +76,19 @@
             <div class="guide">
               <p class="symbol">A</p>
               <p class="document"><span class="step">1</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nesciunt fugiat, libero repellendus quam necessitatibus incidunt vitae maxime! Quam optio quo quis magni voluptates! Soluta, quis aliquam! Officia, veritatis neque.</p>
-              <button class="help" type="button" data-toggle="popover" data-placement="left" title="Popover title"
+              <button class="help" type="button" data-toggle="popover" data-placement="left" title="Answer"
                data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.">?</button>
             </div>
             <div class="guide">
               <p class="symbol">A</p>
               <p class="document"><span class="step">1</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nesciunt fugiat, libero repellendus quam necessitatibus incidunt vitae maxime! Quam optio quo quis magni voluptates! Soluta, quis aliquam! Officia, veritatis neque.</p>
-              <button class="help" type="button" data-toggle="popover" data-placement="left" title="Popover title"
+              <button class="help" type="button" data-toggle="popover" data-placement="left" title="Answer"
                data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.">?</button>
             </div>
             <div class="guide">
               <p class="symbol">A</p>
               <p class="document"><span class="step">1</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nesciunt fugiat, libero repellendus quam necessitatibus incidunt vitae maxime! Quam optio quo quis magni voluptates! Soluta, quis aliquam! Officia, veritatis neque.</p>
-              <button class="help" type="button" data-toggle="popover" data-placement="left" title="Popover title"
+              <button class="help" type="button" data-toggle="popover" data-placement="left" title="Answer"
                data-content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.">?</button>
             </div>
             <div class="guide">
