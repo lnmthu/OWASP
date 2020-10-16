@@ -30,7 +30,7 @@ It is a framework that helps users and developers understand 10 common web attac
 #### Manual
 
 ```bash
-# Clone the project 
+# Clone the project and enter the OWASP folder
 git clone https://github.com/lnmthu/OWASP.git
 cd OWASP
 
@@ -54,7 +54,7 @@ QUEUE_HOST=beanstalkd
 
 #### Docker
 ```sh
-# Clone the laradock 
+# Clone the laradock
 git clone https://github.com/Laradock/laradock.git
 
 # Enter the laradock folder and rename env-example to .env
