@@ -56,9 +56,9 @@ QUEUE_HOST=beanstalkd
 ```sh
 # Clone the laradock 
 git clone https://github.com/Laradock/laradock.git
-cd laradock
 
 # Enter the laradock folder and rename env-example to .env
+cd laradock
 cp env-example .env
 
 # Run your containers:
