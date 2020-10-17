@@ -2,6 +2,10 @@
     width: 1200px;
     zoom: 90%;
 }
+.container-fluid.form{
+    width: 900px;
+    zoom: 90%;
+}
 /* left */
 .barLeft{
     float: left;
@@ -181,4 +185,7 @@ ul.dropdown-menu {
 .register, .login{
     margin-top: 10px;
     text-align: center;
+}
+.mark{
+    background-color: #e74c3c;
 }

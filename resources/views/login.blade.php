@@ -45,15 +45,14 @@
                   @csrf
                   <div class="form-group">
                     <label for="email">Email</label>
-                    {{-- type="email" --}}
-                    <input  class="form-control" id="email" name="email"
-                      placeholder="Please enter your Email" data-error="Bruh, that email address is invalid" >
+                    <input type="email" class="form-control" id="email" name="email"
+                      placeholder="Please enter your Email" data-error="Bruh, that email address is invalid" required>
                       <div class="help-block with-errors"></div>
                   </div>
                   <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" class="form-control" id="password" name="password"
-                      placeholder="Please enter your Password" data-error="Please enter Password" >
+                      placeholder="Please enter your Password" data-error="Please enter Password" required>
                       <div class="help-block with-errors"></div>
                   </div>
                   <button type="submit" class="btn btn-primary">Login</button>
@@ -68,6 +67,7 @@
   </div>
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/validator.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 

@@ -10,6 +10,12 @@ class XssController extends Controller
         $search=null;
         if($request->search)
         $search=$request->search;
-        return view("xss.reflectedXss")->with(compact("search"));
+        return view("attack.xss.reflectedXss")->with(compact("search"));
+    }
+    public function preventXss(Request $request){
+        $search=null;
+        if($request->search)
+        $search=$request->search;
+        return view("prevent.xss.prenventXss")->with(compact("search"));
     }
 }
