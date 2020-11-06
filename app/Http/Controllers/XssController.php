@@ -20,6 +20,7 @@ class XssController extends Controller
     }
     public function getLogin()
     {
+        session()->flush();
         if (Auth::check()) {
             Auth::logout();
         }
