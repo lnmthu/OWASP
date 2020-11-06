@@ -1,29 +1,28 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+Route::get("/", "XssController@showReflectedXss");
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+//action
+Route::prefix('action')->group(function () {
+    Route::prefix('xss')->group(function () {
+        Route::get('login', 'XssController@getLogin');
+        Route::post('login','XssController@postLogin');
+        Route::get('register', 'XssController@getRegister');
+        Route::post('register','XssController@postRegister');
+        Route::get("reflected-xss", "XssController@actionReflectedXss")->middleware('check.auth');
+        Route::get('logout', 'XssController@getLogout');
+        Route::get('code-hacker','XssController@getCodeHacker');
+        Route::get("cookie-hacker",'XssController@getCookieHacker');
+        Route::get("show-cookie-hacker",'XssController@showCookieHacker');
+        Route::get('code-script','XssController@getCodeScript');
+        Route::get('test-code-script','XssController@testCodeScript');
+        Route::get('show-code-prevent','XssController@showCodePrevent');
+        Route::get('get-code-prevent','XssController@getCodePrevent');
+        
 
-Route::get('/', function () {
-    return view('welcome');
+    });
 });
-Route::group(["middleware"=>"check.auth"], function () {
-    Route::get("reflected-xss","XssController@reflectedXss");
-    Route::get("prevent-xss","XssController@preventXss");
-});
-
-
-Route::get("login","AuthController@getLogin");
-Route::post("login","AuthController@postLogin");
-Route::get("register","AuthController@getRegister");
-Route::post("register","AuthController@postRegister");
-Route::get("logout","AuthController@getLogout");
+//show
+Route::get("reflected-xss", "XssController@showReflectedXss");
+Route::get("prevent-xss", "XssController@preventXss");
