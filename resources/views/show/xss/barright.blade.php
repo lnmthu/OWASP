@@ -89,8 +89,7 @@
         <div class="guide twelve">
             <img class="symbol" src="images/user.png">
             <p><span class="number">12</span>
-                Trang web hiển thị ra vẫn là shopping.com<br>
-                Panda không hề hay biết mình bị lừa.<br>
+                Trang Shopping sẽ Popup ra 1 tab mới trỏ về trang của Hacker để lấy coookie<br>
                 <span class="request">Hãy Copy link ở step 9 và Past vào thanh Url nhé</span>
             </p>
         </div>
@@ -121,7 +120,8 @@
         <div class="guide sixteen">
             <img class="symbol" src="images/user.png">
             <p><span class="number">16</span>Bằng cách sử dụng hàm <span class='emphasize'>htmlspecialchars()</span> sẽ
-                giúp thay thế các kí tự Dạng ứng dụng, <br>ví dụ: <span class='emphasize'>“<“ thành “&amp;lt;”</span>
+                giúp thay thế các kí tự Dạng ứng dụng, <br>ví dụ: <span class='emphasize'>“<“ thành “&amp;lt;”</span><br>
+                <span class="request">Bây giờ bạn thử sử dụng script tìm kiếm trên trang shopping để kiểm tra kết quả</span>
                         <br>Chúc mừng bạn đã hoàn thành xong cuộc tấn công <span class="name">Reflected-XSS</span><br>
             </p>
         </div>

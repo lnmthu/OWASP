@@ -20,11 +20,9 @@ class XssController extends Controller
     }
     public function getLogin()
     {
-        session()->flush();
         if (Auth::check()) {
             Auth::logout();
         }
-
         return view("action.xss.login");
     }
     public function postLogin(Request $request)
@@ -107,9 +105,13 @@ class XssController extends Controller
             }
         }
         // request cookie;
-        if ($request->cookie) {
+        elseif ($request->cookie) {
             $cookie = eval(session("codeHacker"));
             session()->put("cookie", $cookie);
+        }
+        else{
+            return redirect()->back()->with("fail", "Wrong code. Please review the suggestion");
+
         }
     }
     public function showCookieHacker()
@@ -173,5 +175,7 @@ class XssController extends Controller
                 return redirect("action/xss/reflected-xss");
             }
         }
+        return redirect()->back()->with("fail", "Wrong code. Please review the suggestion");
+
     }
 }
