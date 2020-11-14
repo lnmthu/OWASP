@@ -54,7 +54,7 @@
     /* margin: 0px 200px 0px; */
     text-align: center;
     font-weight: bolder;
-    font-family: monospace;
+    /* font-family: monospace; */
     padding-top: 50px;
 }
 .barCenter .contentAttack{
@@ -252,6 +252,7 @@ a{
     margin-top: 18px;
     text-decoration: underline;
     /* border-radius: 33%; */
+    color: black;
 }
 textarea.file {
     position: relative;
@@ -291,7 +292,7 @@ textarea.file {
 .red{
     color:red;
 }
-.code .fail {
+.fail {
     float: left;
     position: relative;
     left: 140px;
@@ -302,7 +303,7 @@ span.href{
     color: blue;
     text-decoration: underline;
 }
-span.request{
+span.request,.code,.blue{
     color: blue;
     word-wrap: break-word;
 }
@@ -314,7 +315,7 @@ span.file,.function,.example,.click{
     text-transform: uppercase;
     /* text-decoration: dashed; */
 }
-span.code,.name,.note{
+span,.name,.note,.click{
     color:red;
 }
 .browser {
@@ -402,5 +403,26 @@ form#login,form#register {
     margin-left: 35px;
 }
 
+
+
+.alert.alert-danger.alert-login {
+    padding: 10px;
+    margin-left: 22px;
+}
+.form-auth.SqlInjection {
+    position: relative;
+    bottom: 50px;
+}
+
+.headerForm.SqlInjection {
+    position: relative;
+    bottom: 35px;
+}
+textarea.showSql {
+    margin-left: 40px;
+    width: 89%;
+    padding-top: 20px;
+    padding-left: 31px;
+}
 
 
