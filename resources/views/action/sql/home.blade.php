@@ -15,7 +15,7 @@
     </div>
   </div>
   <div class="headerForm">
-    <a class="logout" href="action/sql/logout">Logout ({{ Auth::user()->name }})</a>
+    <a class="logout" href="action/sql/logout">Logout @if(session("name")){{ session("name") }} @endif</a>
     <p>Education Online</p>
   </div>
   <div class="contentForm">

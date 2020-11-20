@@ -7,7 +7,7 @@ Reflected XSS
   <div class="nameAttack">
     <p>Reflected XSS</p>
   </div>
-  <iframe name="iframe" id='iframe' class="iframe" src='action/xss/login'>
+  <iframe name="iframe" id='iframe' class="iframe" src='action/xss/reset'>
   </iframe>
 </div>
 @endsection

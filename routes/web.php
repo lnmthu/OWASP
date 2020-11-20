@@ -9,6 +9,7 @@ Route::get("sql-injection", "SqlController@home");
 //action
 Route::prefix('action')->group(function () {
     Route::prefix('xss')->group(function () {
+        Route::get('reset', 'XssController@reset');
         Route::get('login', 'XssController@getLogin');
         Route::post('login','XssController@postLogin');
         Route::get('register', 'XssController@getRegister');
@@ -24,11 +25,15 @@ Route::prefix('action')->group(function () {
         Route::get('get-code-prevent','XssController@getCodePrevent');
     });
     Route::prefix('sql')->group(function () {
+        Route::get("reset","SqlController@reset");
         Route::get('login', 'SqlController@getLogin');
         Route::post('login', 'SqlController@postLogin');
         Route::get('code', 'SqlController@actionShowCode');
-        Route::get('home', 'SqlController@actionHome');
+        Route::get('home', 'SqlController@actionHome')->middleware('check.without.auth');
         Route::post('search', 'SqlController@postSearch');
         Route::get('logout','SqlController@logout');
+        Route::get('show-code-prevent','SqlController@showCodePrevent');
+        Route::post('post-code-prevent','SqlController@postCodePrevent');
+
     });
 });

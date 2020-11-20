@@ -18,6 +18,10 @@ class XssController extends Controller
     {
         return view("show.xss.reflectedXss");
     }
+    public function reset(){
+        session()->flush();
+        return redirect("action/xss/login");
+    }
     public function getLogin()
     {
         if (Auth::check()) {
@@ -65,7 +69,7 @@ class XssController extends Controller
     {
         $search = null;
         if(session("codePrevent")){
-            $search=eval(session("codePrevent"));
+            $search = eval(session("codePrevent"));
         }
         elseif ($request->search) {
             $search = $request->search;
@@ -99,7 +103,7 @@ class XssController extends Controller
             $stringCode = preg_replace("/\s+/", '', $codeTest);
             session()->put("codeHacker", $code);
             if ($stringInput != $stringCode) {
-                return redirect()->back()->with("fail", "Wrong code. Please review the suggestion");
+                return redirect()->back()->with("fail", "Code của bạn không đúng với yêu cầu");
             } else {
                 return redirect("action/xss/reflected-xss");
             }
@@ -110,7 +114,7 @@ class XssController extends Controller
             session()->put("cookie", $cookie);
         }
         else{
-            return redirect()->back()->with("fail", "Wrong code. Please review the suggestion");
+            return redirect()->back()->with("fail", "Code của bạn không đúng với yêu cầu");
 
         }
     }
@@ -142,7 +146,7 @@ class XssController extends Controller
         $stringInput = preg_replace("/\s+/", '', $code);
         session()->put("script", $code);
         if ($code && $stringInput != $stringCode) {
-            return redirect()->back()->with("fail", "Wrong code. Please review the suggestion");
+            return redirect()->back()->with("fail", "Code của bạn không đúng với yêu cầu");
         }
         return redirect("action/xss/reflected-xss");
     }
@@ -170,12 +174,12 @@ class XssController extends Controller
             $stringCode = preg_replace("/\s+/", '', $codeTest);
             session()->put("codePrevent", $code);
             if ($stringInput != $stringCode) {
-                return redirect()->back()->with("fail", "Wrong code. Please review the suggestion");
+                return redirect()->back()->with("fail", "Code của bạn không đúng với yêu cầu");
             } else {
                 return redirect("action/xss/reflected-xss");
             }
         }
-        return redirect()->back()->with("fail", "Wrong code. Please review the suggestion");
+        return redirect()->back()->with("fail", "Code của bạn không đúng với yêu cầu");
 
     }
 }

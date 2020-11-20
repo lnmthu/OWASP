@@ -7,7 +7,7 @@ SQL Injection
   <div class="nameAttack">
     <p>SQL Injection</p>
   </div>
-  <iframe name="iframe" id='iframe' class="iframe" src='action/sql/login'>
+  <iframe name="iframe" id='iframe' class="iframe" src='action/sql/reset'>
   </iframe>
 </div>
 @endsection
