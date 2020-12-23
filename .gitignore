@@ -1,6 +1,0 @@
-/node_modules
-/laradock
-/vendor
-.env
-composer.lock
-package-lock.json
