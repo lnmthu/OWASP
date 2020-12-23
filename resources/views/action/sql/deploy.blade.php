@@ -1,4 +1,7 @@
 @extends('action.layout.index')
+@section('title')
+  SQL Injection
+@endsection
 @section('nameAttack')
     Relected XSS
 @endsection
