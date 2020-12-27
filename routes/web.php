@@ -2,25 +2,32 @@
 
 use Illuminate\Support\Facades\Route;
 //show
-Route::get("reflected-xss", "XssController@showReflectedXss");
+Route::get("xxe", "XXEController@showXXE");
 
 //action
 Route::prefix('action')->group(function () {
-    Route::prefix('xss')->group(function () {
-        Route::get('reset', 'XssController@reset');
-        Route::get('login', 'XssController@getLogin');
-        Route::post('login','XssController@postLogin');
-        Route::get('register', 'XssController@getRegister');
-        Route::post('register','XssController@postRegister');
-        Route::get("reflected-xss", "XssController@actionReflectedXss")->middleware('check.auth');
-        Route::get('logout', 'XssController@getLogout');
-        Route::get('code-hacker','XssController@getCodeHacker');
-        Route::get("cookie-hacker",'XssController@getCookieHacker');
-        Route::get("show-cookie-hacker",'XssController@showCookieHacker');
-        Route::get('code-script','XssController@getCodeScript');
-        Route::get('test-code-script','XssController@testCodeScript');
-        Route::get('show-code-prevent','XssController@showCodePrevent');
-        Route::get('get-code-prevent','XssController@getCodePrevent');
+    Route::prefix('xxe')->group(function () {
+        Route::get('DDT', 'XXEController@getDDT');
+        Route::get('DDT-InternalDDTEntity', 'XXEController@getDDTInternalDDTEntity');
+        Route::get('DDT-ExternalDDTEntity', 'XXEController@getDDTExternalDDTEntity');
+        Route::get("prevent","XXEController@getPrevent");
+        Route::post('XML', 'XXEController@postXML');        
+        Route::middleware(['check.not.exist.auth'])->group(function () {
+            Route::get('login', 'XXEController@getLogin');
+            Route::get('login-social', 'XXEController@getLoginSocial');
+            Route::post('login-social', 'XXEController@postLoginSocial');
+            Route::get('register-social', 'XXEController@getRegisterSocial');
+            Route::post('register-social', 'XXEController@postRegisterSocial');
+        });
+        Route::middleware(['check.exist.auth'])->group(function () {
+            Route::get('logout', 'XXEController@getLogout');
+            Route::get('shop', 'XXEController@shop');
+            Route::post('search', 'XXEController@search');
+        });
+        Route::get('file-xml', 'XXEController@fileXML');
+        Route::get('reset', 'XXEController@reset');
+        Route::get('downloadErrorXML', 'XXEController@downloadErrorXML');
+        Route::get('error', 'XXEController@error');
     });
 
 });

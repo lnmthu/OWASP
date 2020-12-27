@@ -4,5 +4,5 @@
     <div class="menu"><a>Giới thiệu</a></div>
     <div class="menu"><a>Mức bảo mật</a></div>
     <div class="menu"><a>Top 10 OWASP</a></div>
-    <div class="menu" style="margin-bottom: 400px;"><a>About</a></div>
+    <div class="menu" style="margin-bottom: 400px;"><a>Liên hệ</a></div>
   </div>

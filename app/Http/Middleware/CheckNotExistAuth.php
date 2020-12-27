@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class CheckAuth
+class CheckNotExistAuth
 {
     /**
      * Handle an incoming request.
@@ -18,7 +18,7 @@ class CheckAuth
     public function handle(Request $request, Closure $next)
     {
         if(!Auth::check())
-            return response()->view("errors.401");
-        return $next($request);
+            return $next($request);
+        return redirect('action/xxe/shop');
     }
 }

@@ -1,6 +1,6 @@
 @extends('action.layout.index')
 @section('nameAttack')
-Relected XSS
+XXE
 @endsection
 @section('contentAttack')
 <div class="form-auth">
@@ -21,7 +21,7 @@ Relected XSS
     <h3 class="text-center">Sign up</h3>
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
-            <form id="register" action="action/xss/register" method="POST" data-toggle="validator" role="form">
+            <form id="register" action="action/xxe/register-social" method="POST" data-toggle="validator" role="form">
                     @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -59,7 +59,7 @@ Relected XSS
                 <button type="submit" class="btn btn-primary auth">Sign up</button>
             </form>
             <div class="login">
-                <span>Bạn đã có tài khoản?</span><a href="action/xss/login">Đăng nhập</a>
+                <span>Bạn đã có tài khoản?</span><a href="action/xxe/login-social">Đăng nhập</a>
                 </div>
         </div>
     </div>      

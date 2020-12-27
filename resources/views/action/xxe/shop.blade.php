@@ -15,21 +15,21 @@
     </div>
   </div>
   <div class="headerForm">
-    <a class="logout" href="action/xss/logout">Logout ({{ Auth::user()->name }})</a>
+    <a class="logout" href="action/xxe/logout">Logout ({{ Auth::user()->name }})</a>
     <p>Shopping Online</p>
   </div>
   <div class="contentForm">
-    <form id='form-search' class="form-inline" action="" method="get" role="form">
+    <form id='form-search' class="form-inline" action="action/xxe/search" method="post" role="form">
+      @csrf
       <div class="form-group">
         <label for="">Tìm kiếm</label>
         <input name="search" type="text" class="form-control" id="valSearch" placeholder="Nhập từ khoá">
       </div>
       <button type="submit" id='search' class="btn btn-primary">Tìm</button>
     </form>
-    @if($search)
-    <p><span>Kết quả:</span><?php echo $search?></p>
+    @if(isset($search))
+    <p><span>Kết quả:</span>{{ $search }}</p>
     @endif
   </div>
-  <a href="http://acttacker.tk" target="_blank" class="view-source">View source</a>
 </div>
 @endsection

@@ -76,12 +76,12 @@
     color: black;
     background: #a29bfe;
 }
-.barCenter .contentAttack .formAttack .headerForm{
+ .headerForm{
     background-color: gold;
     /* border: 3px solid black; */
-    margin: 36px -7px 10px 11px;
+    margin: 36px -7px 37px 11px;
 }
-.barCenter .contentAttack .formAttack .headerForm p{
+ .headerForm p{
     padding: 20px;
     text-align: center;
     font-size: 20px;
@@ -248,11 +248,11 @@ a{
     background: slategray;
     margin: 10px;
     /* margin-right: 459px; */
-    padding: 3px 0px;
+    padding: 5px 0px;
     text-align: center;
     width: 120px;
     text-align: c;
-    margin-top: 18px;
+    margin-top: -7px;
     text-decoration: underline;
     /* border-radius: 33%; */
     color: black;
@@ -262,9 +262,9 @@ textarea.file {
     top: 31px;
 }
 .code textarea.text-code {
-    width: 517px;
-    height: 519px;
-    margin-top: -41px;
+    width: 505px;
+    height: 482px;
+    margin-top: -141px;
     margin-left: 10px;
     padding: 9.5px;
     font-size: 13px;
@@ -278,7 +278,6 @@ textarea.file {
     border: none;
     font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
     tab-size: 4;
-
 }
 .code textarea:focus{
     outline: none;
@@ -289,15 +288,15 @@ textarea.file {
     background: #a29bfe;
     position: relative;
     float: right;
-    bottom: 42px;
+    bottom: 140px;
     border: none;
-    right: 11px;
+    right: 38px;
     padding: 5px;
 }
 .code a.back {
     position: relative;
     float: right;
-    bottom: 38px;
+    bottom: 53px;
     /* background: center; */
     padding: 0px;
     /* margin: 10px; */
@@ -309,17 +308,24 @@ textarea.file {
     float: left;
     position: relative;
     left: 140px;
-    bottom: 35px;
+    bottom: 75px;
     color: red;
 }
-span.href{
+.href{
     color: blue;
     text-decoration: underline;
+    font-style: italic;
 }
-.request,.code,.blue{
+.request,.blue{
     color: blue;
     word-wrap: break-word;
 }
+
+.code{
+    margin: 10px;
+    white-space: pre-line;
+}
+
 span.emphasize{
     font-weight: bolder;
 }
@@ -447,3 +453,33 @@ pre#text-code {
     bottom: 10px;
 }
 pre.code {background-color: #a29bfe;/* position: relative; *//* bottom: 15px; */border: none;padding-bottom: 0px;padding-top: 0px;padding-bottom: -60px;}
+img.social {
+    padding: 10px;
+    width: 100px;
+    margin-left: 200px;
+}
+img.icon-social {
+    padding: 10px;
+    width: 59px;
+    display: inline;
+}
+
+.nav-social {
+    position: relative;
+    bottom: 40px;
+    left: 10px;
+    background-color: cornflowerblue;
+}
+h3.name-social {
+    position: absolute;
+    bottom: 5px;
+    left: 56px;
+    color: white;
+}
+.success{
+    color:#2ecc71;
+    float: left;
+    position: relative;
+    left: 140px;
+    bottom: 35px;
+}

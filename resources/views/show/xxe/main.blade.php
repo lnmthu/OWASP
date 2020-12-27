@@ -1,19 +1,19 @@
 @extends('show.layout.index')
 @section('title')
-Reflected XSS
+XXE
 @endsection
 @section('barcenter')
 <div class="barCenter">
   <div class="nameAttack">
-    <p>Reflected XSS</p>
+    <p>XXE</p>
   </div>
-  <iframe name="iframe" id='iframe' class="iframe" src='action/xss/reset'>
+  <iframe name="iframe" id='iframe' class="iframe" src='action/xxe/reset'>
   </iframe>
 </div>
 @endsection
 @section('barright')
-    @include('show.xss.barright')
+    @include('show.xxe.barright')
 @endsection
 @section('script')
-  <script src="js/reflected-xss.js"></script>
+  <script src="js/xxe.js"></script>
 @endsection

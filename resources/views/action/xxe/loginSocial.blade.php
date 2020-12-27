@@ -1,6 +1,6 @@
 @extends('action.layout.index')
 @section('nameAttack')
-Relected XSS
+XXE
 @endsection
 @section('contentAttack')
 <div class="form-auth">
@@ -17,6 +17,11 @@ Relected XSS
       </div>
     </div>
   </div>
+  <div class="nav-social">
+    <img class="icon-social" alt="bookface" src="images/bookface.png">
+    <h3 class="name-social">BookFace</h3>
+  </div>
+    <input type="hidden" id="sessionEnableDownload" value="<?= session("enableDownload") ?>" />
     <h3 class="text-center">Login</h3>
         @if (session("success"))
         <div class="alert alert-success" role="alert">
@@ -25,7 +30,7 @@ Relected XSS
         @endif
         <div class="alert alert-danger alert-login" style="display: none">
       </div>
-        <form id="login" action="action/xss/login" method="POST" data-toggle="validator" role="form">
+        <form id="login" action="action/xxe/login-social" method="POST" data-toggle="validator" role="form">
           @csrf
           <div class="form-group">
             <label for="email">Email</label>
@@ -42,7 +47,7 @@ Relected XSS
           <button type="submit" class="btn btn-primary auth">Login</button>
         </form>
         <div class="register">
-            <span>Bạn không có tài khoản?</span><a href="action/xss/register">Đăng ký</a>
+            <span>Bạn không có tài khoản?</span><a href="action/xxe/register-social">Đăng ký</a>
         </div>
       </div>
 @endsection
