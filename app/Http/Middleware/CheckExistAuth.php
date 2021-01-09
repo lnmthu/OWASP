@@ -19,6 +19,6 @@ class CheckExistAuth
     {
         if(Auth::check())
             return $next($request);
-        return redirect('action/xxe/login');
+        return redirect('action/BA/login-social');
     }
 }

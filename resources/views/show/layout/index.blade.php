@@ -23,9 +23,11 @@
       </div>
   </div>
   <script src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
   @yield('script')
+  
 </body>
 
 </html>

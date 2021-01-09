@@ -21,19 +21,16 @@ XXE
     <h3 class="text-center">Sign up</h3>
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
-            <form id="register" action="action/xxe/register-social" method="POST" data-toggle="validator" role="form">
-                    @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
+            <form id="register" action="action/BA/register-social" method="POST" data-toggle="validator" role="form">
+                <div class="alert alert-danger" style="display: none">
+                    <ul class = "alert-errors">    
                     </ul>
                 </div>
-            @endif
+                <div class="alert alert-success" role="alert" style="display: none">
+                </div>
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" name="name"
+                    <input type="text" class="form-control" id="name" name="name"
                         placeholder="Please enter your Username" data-error="Please enter your Username" required >
                     <div class="help-block with-errors"></div>
                 </div>
@@ -46,7 +43,7 @@ XXE
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input class="form-control" type="password" id="password" name="password" placeholder="Please Enter Password"  data-error="Minimum of 6 characters" data-minlength="6"  required  />
+                    <input class="form-control" type="password" id="password" name="password" placeholder="Please Enter Password"  />
                     <div class="help-block with-errors"></div>
                 </div>
                   <div class="form-group">
@@ -59,7 +56,7 @@ XXE
                 <button type="submit" class="btn btn-primary auth">Sign up</button>
             </form>
             <div class="login">
-                <span>Bạn đã có tài khoản?</span><a href="action/xxe/login-social">Đăng nhập</a>
+                <span>Bạn đã có tài khoản?</span><a href="action/BA/login-social">Đăng nhập</a>
                 </div>
         </div>
     </div>      

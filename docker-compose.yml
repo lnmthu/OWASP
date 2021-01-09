@@ -7,8 +7,8 @@ services:
         uid: 1000
       context: ./
       dockerfile: .docker/Dockerfile
-    image: xxe
-    container_name: xxe-app
+    image: broken-authentication
+    container_name: broken-authentication-app
     restart: always
     ports:
       - 80:80
@@ -16,10 +16,10 @@ services:
     volumes:
       - ./:/var/www/html
     networks:
-      - xxe
+      - broken-authentication
   db:
     image: mysql:5.7
-    container_name: xxe-db
+    container_name: broken-authentication-db
     restart: always
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
@@ -31,8 +31,16 @@ services:
     volumes:
       - ./docker-compose/mysql:/docker-entrypoint-initdb.d
     networks:
-      - xxe
-
+      - broken-authentication
+  terminal:
+    image: thuicetea/broken-authentication-terminal:v1
+    container_name: broken-authentication-terminal
+    restart: always
+    ports: 
+      - 57575:57575
+    working_dir: ""
+    networks:
+      - broken-authentication
 networks:
-  xxe:
+  broken-authentication:
     driver: bridge

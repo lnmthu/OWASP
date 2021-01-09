@@ -19,6 +19,6 @@ class CheckNotExistAuth
     {
         if(!Auth::check())
             return $next($request);
-        return redirect('action/xxe/shop');
+        return redirect('action/BA/social');
     }
 }

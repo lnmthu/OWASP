@@ -189,10 +189,12 @@
     margin-left: 6px;
 }
 ul.dropdown-menu {
-    padding-right: 5px;
-    background: #a29bfe;
+    padding-right: 0px;
+    /* background: #a29bfe; */
+    /* background: #a29bfe; */
     border: none;
     margin-top: 0px;
+    min-width: 0px;
 }
 .form-auth {
     margin-top: 45px;
@@ -236,7 +238,7 @@ button#search {
 }
 button.btn.btn-primary.auth {
     position: relative;
-    left: 45%;
+    left: 42%;
 }
 .guide {
     display: none;
@@ -482,4 +484,37 @@ h3.name-social {
     position: relative;
     left: 140px;
     bottom: 35px;
+}
+.dropdown {
+    margin-left: 80%;
+}
+span.caret {
+    color: white;
+}
+
+.dropdown-custom {
+    padding: 7px 18px;
+    margin-top: 60px ;
+}
+.social .nav-social {
+    top: 0px;
+}
+form#info {
+    margin-left: 20px;
+}
+label#password-error {
+    color: #a94442;
+    font-weight: 400;
+}
+.error{
+    border-color: red;
+}
+.disabled{
+    background-color: #265a88;
+    background-image: none;
+}
+button.btn.btn-light.back {
+    left: 220px;
+    position: relative;
+    height: 37px;
 }

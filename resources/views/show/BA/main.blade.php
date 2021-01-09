@@ -1,19 +1,19 @@
 @extends('show.layout.index')
 @section('title')
-XXE
+Broken Authentication
 @endsection
 @section('barcenter')
 <div class="barCenter">
   <div class="nameAttack">
-    <p>XXE</p>
+    <p>Broken Authentication</p>
   </div>
-  <iframe name="iframe" id='iframe' class="iframe" src='action/xxe/reset'>
+  <iframe name="iframe" id='iframe' class="iframe" src='action/BA/reset'>
   </iframe>
 </div>
 @endsection
 @section('barright')
-    @include('show.xxe.barright')
+    @include('show.BA.barright')
 @endsection
 @section('script')
-  <script src="js/xxe.js"></script>
+<script src="js/BA.js"></script>
 @endsection
