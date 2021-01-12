@@ -33,7 +33,7 @@ services:
     networks:
       - broken-authentication
   terminal:
-    image: thuicetea/broken-authentication-terminal:v1
+    image: thuicetea/broken-authentication-terminal:v2
     container_name: broken-authentication-terminal
     restart: always
     ports: 

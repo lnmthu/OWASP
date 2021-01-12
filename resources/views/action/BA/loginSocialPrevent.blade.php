@@ -23,11 +23,22 @@ XXE
   </div>
     <input type="hidden" id="sessionEnableDownload" value="<?= session("enableDownload") ?>" />
     <h3 class="text-center">Login</h3>
-        <div class="alert alert-success" role="alert" style="display: none">
-        </div>
-        <div class="alert alert-danger alert-login" style="display: none">
-      </div>
-          <form id="login" action="action/BA/login-social" method="POST" data-toggle="validator" role="form">
+  
+            @if ($errors->any())
+              <div class="alert alert-danger">
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                      @endforeach
+                  </ul>
+              </div>
+          @elseif (session("error"))
+              <div class="alert alert-danger">
+                {{ session("error") }}
+              </div>
+          @endif
+          <form id="login" action="action/BA/login-social-prevent" method="POST" data-toggle="validator" role="form">
+            @csrf
           <div class="form-group">
             <label for="email">Email</label>
             <input type="email" class="form-control" id="email" name="email"
@@ -40,10 +51,14 @@ XXE
               placeholder="Please enter your Password" data-error="Please enter Password" required>
               <div class="help-block with-errors"></div>
           </div>
+            <div class="g-recaptcha" data-sitekey="{{env('CAPTCHA_KEY')}}"></div><br>
           <button type="submit" class="btn btn-primary auth">Login</button>
         </form>
         <div class="register">
             <span>Bạn không có tài khoản?</span><a href="action/BA/register-social">Đăng ký</a>
         </div>
       </div>
+@endsection
+@section('script')
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>  
 @endsection

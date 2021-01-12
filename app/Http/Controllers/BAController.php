@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Register;
+use App\Models\User;
 use App\Repository\User\UserInterface;
-use DOMDocument;
+use App\Rules\Captcha;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
-use App\Rules\Captcha; 
 
 class BAController extends Controller
 {
@@ -27,12 +26,15 @@ class BAController extends Controller
     }
     public function getLoginSocial()
     {
+        if (session("prevent")) {
+            return view("action.BA.loginSocialPrevent");
+        }
         return view("action.BA.loginSocial");
     }
     public function postLoginSocial(Request $request)
     {
+
         $data = $request->all();
-        return $data;
         if ($data) {
             $user = $this->userRepository->login($data);
             if ($user) {
@@ -40,6 +42,21 @@ class BAController extends Controller
             }
         }
         return false;
+    }
+    public function postLoginSocialPrevent(Request $request)
+    {
+        $data = $request->validate([
+            "email" => "required|email",
+            "password" => "required",
+            'g-recaptcha-response' => new Captcha(),
+        ]);
+        if ($data) {
+            $user = $this->userRepository->login($data);
+            if ($user) {
+                return redirect("action/BA/social");
+            }
+        }
+        return redirect("action/BA/login-social")->with("error", "Email or Password is not correct");
     }
     public function getRegisterSocial()
     {
@@ -67,15 +84,22 @@ class BAController extends Controller
         $search = $request->search;
         return view('action.BA.social')->with(compact("search"));
     }
-    public function getInfo(){
+    public function getInfo()
+    {
         return view("action.BA.info");
     }
-    public function postInfo(Request $request){
+    public function postInfo(Request $request)
+    {
         $user = User::find(Auth::user()->id);
         $user->name = $request->name;
         $user->password = bcrypt($request->password);
         $user->save();
         return true;
         // return redirect("action/BA/info")->with("success","Account information changed successfully");
+    }
+    public function setPrevent()
+    {
+        session()->put("prevent", "enabled");
+        return redirect('action/BA/social');
     }
 }

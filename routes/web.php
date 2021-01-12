@@ -11,6 +11,7 @@ Route::prefix('action')->group(function () {
         Route::middleware(['check.not.exist.auth'])->group(function () {
             Route::get('login-social', 'BAController@getLoginSocial');
             Route::post('login-social', 'BAController@postLoginSocial');
+            Route::post('login-social-prevent', 'BAController@postLoginSocialPrevent');
             Route::get('register-social', 'BAController@getRegisterSocial');
             Route::post('register-social', 'BAController@postRegisterSocial');
         });
@@ -21,14 +22,8 @@ Route::prefix('action')->group(function () {
             Route::get('social', 'BAController@social');
             Route::get('search', 'BAController@search');
         });
-        Route::get('DDT', 'XXEController@getDDT');
-        Route::get('DDT-InternalDDTEntity', 'XXEController@getDDTInternalDDTEntity');
-        Route::get('DDT-ExternalDDTEntity', 'XXEController@getDDTExternalDDTEntity');
-        Route::get("prevent", "XXEController@getPrevent");
-        Route::post('XML', 'XXEController@postXML');
-        Route::get('file-xml', 'XXEController@fileXML');
-        Route::get('downloadErrorXML', 'XXEController@downloadErrorXML');
-        Route::get('error', 'XXEController@error');
+        Route::get('prevent', 'BAController@setPrevent');
+
     });
 
 });

@@ -36,6 +36,7 @@ $(document).ready(function () {
     SetTimeOut("two", 6000);
     $("#BA-prevent").click(function () {
         SetTimeOut("twelve", 1000);
+        $("iframe").attr("src", "action/BA/prevent");
     });
     $("#next-step-three").click(function () {
         SetTimeOut("three", 1000);
@@ -44,75 +45,80 @@ $(document).ready(function () {
     $(".exec-brute-force").click(function () {
         $("iframe").attr("src", "http://localhost:57575");
     });
-    $("#logout-action").click(function () {
-        $("iframe").attr("src", "action/BA/logout");
+    $("#logout-show").click(function () {
+        if ($(".guide.thirteen").css("display") == "block") {
+            SetTimeOut("fourteen", 1000);
+            SetTimeOut("fifteen", 4000);
+        }
+            $("iframe").attr("src", "action/BA/logout");
     });
     $("iframe").on("load", function () {
         if ($("iframe").attr("src") !== "http://localhost:57575") {
             iframe = $(this).contents();
             iframe.find("#login").on("submit", function (e) {
-                if (!e.isDefaultPrevented()) {
-                    e.preventDefault();
-                    var email = iframe.find("#email").val();
-                    var password = iframe.find("#password").val();
-                    var _token = iframe.find('input[name="_token"]').val();
-                    $.ajax({
-                        type: "POST",
-                        url: "action/BA/login-social",
-                        data: {
-                            email: email,
-                            password: password,
-                            _token: _token,
-                            captcha: grecaptcha.getResponse()
-                        },
-                        success: function (response) {
-                            console.log(response);
-                            if (response == 1) {
-                                if (
-                                    $(".guide.eight").css("display") == "block"
-                                ) {
-                                    SetTimeOut("nine", 1000);
-                                    SetTimeOut("ten", 4000);
-                                    SetTimeOut("eleven", 7000);
-                                }
-                                if (
-                                    $(".guide.thirteen").css("display") ==
-                                    "block"
-                                ) {
-                                    SetTimeOut("fourteen", 1000);
-                                    SetTimeOut("fifteen", 5000);
-                                }
-                                $("iframe").attr("src", "action/BA/social");
-                            } else {
-                                iframe.find(".alert-login").fadeIn();
-                                iframe
-                                    .find(".alert-login")
-                                    .html("Email or Password is not correct");
-                                setTimeout(function () {
-                                    iframe.find(".alert-login").fadeOut();
-                                }, 3000);
-                                if ($(".guide.four").css("display") == "none") {
-                                    SetTimeOut("four", 1000);
-                                }
-                                if (
-                                    password ==
-                                    "' or email = 'pandalovely@gmail.com' #"
-                                ) {
-                                    SetTimeOut("five", 1000);
-                                    SetTimeOut("six", 4000);
-                                    SetTimeOut("seven", 7000);
-                                    SetTimeOut("eight", 9000);
-                                }
-                                if (
+                if ($(".guide.twelve").css("display") == "none") {
+                    if (!e.isDefaultPrevented()) {
+                        e.preventDefault();
+                        var email = iframe.find("#email").val();
+                        var password = iframe.find("#password").val();
+                        var _token = iframe.find('input[name="_token"]').val();
+                        $.ajax({
+                            type: "POST",
+                            url: "action/BA/login-social",
+                            data: {
+                                email: email,
+                                password: password,
+                                _token: _token,
+                            },
+                            success: function (response) {
+                                console.log(response);
+                                if (response == 1) {
+                                    if (
+                                        $(".guide.eight").css("display") ==
+                                        "block"
+                                    ) {
+                                        SetTimeOut("nine", 1000);
+                                        SetTimeOut("ten", 4000);
+                                        SetTimeOut("eleven", 7000);
+                                    }
+                                        
+                                    $("iframe").attr("src", "action/BA/social");
+                                } else {
+                                    iframe.find(".alert-login").fadeIn();
                                     iframe
-                                        .find(".alert-success")
-                                        .css("display") == "block"
-                                ) {
-                                    iframe.find(".alert-success").fadeOut();
+                                        .find(".alert-login")
+                                        .html(
+                                            "Email or Password is not correct"
+                                        );
+                                    setTimeout(function () {
+                                        iframe.find(".alert-login").fadeOut();
+                                    }, 3000);
+                                    if (
+                                        $(".guide.four").css("display") ==
+                                        "none"
+                                    ) {
+                                        SetTimeOut("four", 1000);
+                                    }
+                                    if (
+                                        password ==
+                                        "' or email = 'pandalovely@gmail.com' #"
+                                    ) {
+                                        SetTimeOut("five", 1000);
+                                        SetTimeOut("six", 4000);
+                                        SetTimeOut("seven", 7000);
+                                        SetTimeOut("eight", 9000);
+                                    }
+                                    if (
+                                        iframe
+                                            .find(".alert-success")
+                                            .css("display") == "block"
+                                    ) {
+                                        iframe.find(".alert-success").fadeOut();
+                                    }
                                 }
-                            }
-                        },
-                    });
+                            },
+                        });
+                    }
                 }
             });
             function validatePassword(classElement) {
@@ -179,6 +185,13 @@ $(document).ready(function () {
             }
             validatePassword("info");
             validatePassword("register");
+            iframe.find("#logout-action").click(function () {
+                if ($(".guide.thirteen").css("display") == "block") {
+                    SetTimeOut("fourteen", 1000);
+                    SetTimeOut("fifteen", 4000);
+                }
+                    $("iframe").attr("src", "action/BA/logout");
+            });
         }
     });
 });

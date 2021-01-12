@@ -63,7 +63,7 @@
             <img class="symbol" src="images/attacker.png">
             <p><span class="number">8</span>
                 Vào <a class="href exec-brute-force">Terminal</a> thực thi CMD trên<br>
-                Nếu tìm thấy password này, hãy sử dụng nó và tiến hành <a class="href" id="logout-action">Đăng nhập</a>.
+                Nếu tìm thấy password này, hãy sử dụng nó và tiến hành <a class="href" id="logout-show">Đăng nhập</a>.
             </p>
         </div>
         <div class="guide nine">
@@ -82,26 +82,26 @@
             <img class="symbol" src="images/user.png">
             <p><span class="number">11</span>
                 Vậy để khắc phục ta nên: <br>
-                Yêu cầu đặt <span class="red">password ít nhất 8 kí tự bao gồm cả chữ và số + 2AF (Xác thực 2 yếu tố)</span><br>
-                Tích hợp <span class="red">Captcha</span> để ngăn chặn cuộc tấn công Brute Force.<br>
+                Yêu cầu đặt <span class="red">password ít nhất 8 kí tự bao gồm cả chữ và số</span><br>
+                Tích hợp <span class="red">Captcha + Cross-site request forgeries (CSRF)</span> để ngăn chặn cuộc tấn công Brute Force.<br>
                 Tiến hành <a class="href" id="BA-prevent">triển khai ngăn chặn</a>
             </p>
         </div>
         <div class="guide twelve">
             <img class="symbol" src="images/user.png">
             <p><span class="number">12</span>
-                Hãy <a class="href">Thay đổi</a> password khác trong phần <strong>Menu</strong>            </p>
+                Hãy <strong>Thay đổi </strong> password khác trong phần <strong>Menu</strong>            </p>
         </div>
         <div class="guide thirteen">
             <img class="symbol" src="images/user.png">
             <p><span class="number">13</span>
-                Hãy <a class="href">Đăng xuất</a> và đăng nhập lại bằng password này             </p>
+                Hãy  <strong>Đăng xuất và Đăng nhập</strong> lại bằng password này</p>
         </div>
         <div class="guide fourteen">
             <img class="symbol" src="images/user.png">
             <p><span class="number">14</span>
-                Bây giờ, bạn hãy vào <a class="href exec-brute-force">Terminal</a> và thực thi <strong>CMD</strong><br>
-                <span class="red">php5 crackpass.php</span><br>
+                Sau đó, hãy vào <a class="href exec-brute-force">Terminal</a> và thực thi <strong>CMD</strong><br>
+                <span class="red">php5 crackpassprevent.php</span><br>
                 Để tấn công Brute Force
             </p>
         </div>

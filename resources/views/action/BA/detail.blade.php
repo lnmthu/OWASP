@@ -24,10 +24,10 @@
           </button>
           <ul class="dropdown-menu">
               <li>
-                  <a href="action/BA/info">{{ Auth::user()->name }}</a>
+                  {{-- <a href="action/BA/info">{{ Auth::user()->name }}</a> --}}
               </li>
               <li>
-                  <a href="action/BA/logout" id="logout-action">Logout</a>
+                  <a href="action/BA/logout">Logout</a>
               </li>
           </ul>
       </div>
@@ -35,17 +35,7 @@
 
 
         <div class="contentForm">
-            <form id='form-search' class="form-inline" action="action/BA/search" method="get" role="form">
-                @csrf
-                <div class="form-group">
-                    <label for="">Tìm kiếm</label>
-                    <input name="search" type="text" class="form-control" id="valSearch" placeholder="Nhập từ khoá">
-                </div>
-                <button type="submit" id='search' class="btn btn-primary">Tìm</button>
-            </form>
-            @if (isset($search))
-                <p><span>Kết quả:</span>{{ $search }}</p>
-            @endif
+            {{ $product->name." giá là: ".$product->price }}
         </div>
     </div>
 @endsection
