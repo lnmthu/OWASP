@@ -1,13 +1,7 @@
 version: "3.7"
 services:
   app:
-    build:
-      args:
-        user: sammy
-        uid: 1000
-      context: ./
-      dockerfile: .docker/Dockerfile
-    image: xxe
+    image: thuicetea/xxe:v1
     container_name: xxe-app
     restart: always
     ports:
