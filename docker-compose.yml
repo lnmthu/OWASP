@@ -1,14 +1,8 @@
 version: "3.7"
 services:
   app:
-    build:
-      args:
-        user: sammy
-        uid: 1000
-      context: ./
-      dockerfile: .docker/Dockerfile
-    image: xxe
-    container_name: xxe-app
+    image: thuicetea/sql-injection:v1
+    container_name: sql-injection-app
     restart: always
     ports:
       - 80:80
@@ -16,10 +10,10 @@ services:
     volumes:
       - ./:/var/www/html
     networks:
-      - xxe
+      - sql-injection
   db:
     image: mysql:5.7
-    container_name: xxe-db
+    container_name: sql-injection-db
     restart: always
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
@@ -31,8 +25,8 @@ services:
     volumes:
       - ./docker-compose/mysql:/docker-entrypoint-initdb.d
     networks:
-      - xxe
+      - sql-injection
 
 networks:
-  xxe:
+  sql-injection:
     driver: bridge
