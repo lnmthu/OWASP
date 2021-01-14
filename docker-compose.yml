@@ -1,16 +1,10 @@
 version: "3.7"
 services:
   app:
-    build:
-      args:
-        user: sammy
-        uid: 1000
-      context: ./
-      dockerfile: .docker/Dockerfile
-    image: broken-authentication
+    image: thuicetea/broken-authentication:v1
     container_name: broken-authentication-app
     restart: always
-    ports:
+    ports: 
       - 80:80
     working_dir: /var/www/html
     volumes:
