@@ -518,3 +518,8 @@ button.btn.btn-light.back {
     position: relative;
     height: 37px;
 }
+textarea.robots {
+    border: none;
+    width: 100%;
+    height: 420px;
+}

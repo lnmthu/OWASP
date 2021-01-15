@@ -11,5 +11,5 @@ class VerifyCsrfToken extends Middleware
      *
      * @var array
      */
-    protected $except = ["action/BA/login-social"];
+    protected $except = [];
 }
