@@ -149,7 +149,7 @@ ServerTokens Prod";
     }
     public function hidden()
     {
-        $str = "ServerSignature Off
+        $str = "\nServerSignature Off
 ServerTokens Prod\n";
         $this->security($str);
     }
