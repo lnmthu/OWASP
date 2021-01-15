@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Register;
-use App\Models\User;
 use App\Repository\User\UserInterface;
-use App\Rules\Captcha;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Throwable;
 
 class SDEController extends Controller
 {
@@ -24,6 +21,34 @@ class SDEController extends Controller
     public function reset()
     {
         session()->flush();
+        $flag = 0;
+        $file = '/etc/apache2/apache2.conf';
+        $current = file_get_contents($file);
+        if (strpos($current, "<Directory /var/www/html/public/account.txt>")) {
+            $strReplace = "\n<Directory /var/www/html/public/account.txt>
+\tOptions None
+\tOrder deny,allow
+\tDeny from all
+</Directory>
+<Directory /var/www/html/public/private.txt>
+\tOptions None
+\tOrder deny,allow
+\tDeny from all
+</Directory>\n";
+            $current = str_replace($strReplace, "", $current);
+            file_put_contents($file, $current);
+            $flag += 1;
+        }
+        if (strpos($current, "ServerTokens Prod")) {
+            $strReplace = "ServerSignature Off
+ServerTokens Prod";
+            $current = str_replace($strReplace, "", $current);
+            file_put_contents($file, $current);
+            $flag += 1;
+        }
+        if ($flag > 0) {
+            shell_exec('RET=`sudo /usr/sbin/service apache2 restart`;echo $RET');
+        }
 
     }
     public function social()
@@ -35,46 +60,97 @@ class SDEController extends Controller
         $search = $request->search;
         return view('action.SDE.social')->with(compact("search"));
     }
-    public function getCode(){
+    public function getCode()
+    {
         $name = "robots.txt";
         $action = "action/SDE/code";
         $code = "";
-        if(session()->has("codeTest"))
+        if (session()->has("codeTest")) {
             $code = session("codeTest");
-        return view("action.SDE.code")->with(compact("name","action","code"));
+        }
+
+        return view("action.SDE.code")->with(compact("name", "action", "code"));
     }
-    public function postCode(Request $request){
+    public function postCode(Request $request)
+    {
         $code = $request->code;
-        session()->put("codeTest",$code);
+        session()->put("codeTest", $code);
         $str = preg_replace("/\s+/", "", $code);
-        $checkCode="User-agent:*Disallow:/test.txt";
-        if($str == $checkCode)
+        $checkCode = "User-agent:*Disallow:/test.txt";
+        if ($str == $checkCode) {
             return true;
+        }
+
         return false;
     }
-    public function robots(Request $request){
-        $route = $request->id;
-        if($route ==1){
-            $text = file_get_contents("http://localhost/robots.txt");
-            $url = "http://localhost/robots.txt";
-        }else if($route ==2){
-            $text = file_get_contents("http://localhost/test.txt");
-            $url = "http://localhost/test.txt";
-        }
-        else if($route ==3){
-            $text = file_get_contents("http://localhost/account.txt");
-            $url = "http://localhost/account.txt";
-        }else if($route ==4){
-            $text = file_get_contents("http://localhost/private.txt");
-            $url = "http://localhost/private.txt";
-        }
-        return view("action.SDE.robots")->with(compact("text","url"));
+    public function getHTML($url)
+    {
+        $ch = curl_init();
+        $timeout = 5;
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0)");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_MAXREDIRS, 10);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+        $data = curl_exec($ch);
+        curl_close($ch);
+        return $data;
     }
-    public function prevent()
+    public function robots(Request $request)
+    {
+        $route = $request->id;
+        switch ($route) {
+            case 1:
+                $url = "http://localhost/robots.txt";
+                break;
+            case 2:
+                $url = "http://localhost/test.txt";
+                break;
+            case 3:
+                $url = "http://localhost/account.txt";
+                break;
+            default:
+                $url = "http://localhost/private.txt";
+        }
+        try {
+            $text = file_get_contents($url);
+        } catch (Throwable $e) {
+            $text = $this->getHTML($url);
+        }
+        return view("action.SDE.robots")->with(compact("text", "url"));
+    }
+    public function security($str)
     {
         $file = '/etc/apache2/apache2.conf';
         $current = file_get_contents($file);
-        $current .= "\nJohn Smith";
-        file_put_contents($file, $current);
+        if (!strpos($current, $str)) {
+            $current .= $str;
+            file_put_contents($file, $current);
+            shell_exec('RET=`sudo /usr/sbin/service apache2 restart`;echo $RET');
+        }
+    }
+    public function prevent()
+    {
+        $str = "\n<Directory /var/www/html/public/account.txt>
+\tOptions None
+\tOrder deny,allow
+\tDeny from all
+</Directory>
+<Directory /var/www/html/public/private.txt>
+\tOptions None
+\tOrder deny,allow
+\tDeny from all
+</Directory>\n";
+        $this->security($str);
+
+    }
+    public function hidden()
+    {
+        $str = "ServerSignature Off
+ServerTokens Prod\n";
+        $this->security($str);
     }
 }

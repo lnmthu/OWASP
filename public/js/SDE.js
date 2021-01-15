@@ -15,7 +15,7 @@ $(document).ready(function () {
     $("#mission-step-five").click(function () {
         $("iframe").attr("src", "action/SDE/code");
     });
-    $("#access-robots").click(function () {
+    $(".access-robots").click(function () {
         $("iframe").attr("src", "action/SDE/robots/1");
         SetTimeOut("seven", 1000);
     });
@@ -23,7 +23,11 @@ $(document).ready(function () {
         $("iframe").attr("src", "action/SDE/prevent");
         SetTimeOut("ten", 1000);
     });
-
+    $("#hidden-OS").click(function () {
+        $("iframe").attr("src", "action/SDE/hidden");
+        SetTimeOut("twelve", 1000);
+    });
+    
     $("iframe").on("load", function () {
         iframe = $(this).contents();
         iframe.find(".address").keypress(function (e) {

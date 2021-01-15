@@ -51,7 +51,7 @@ Disallow: /test.txt
             <img class="symbol" src="images/attacker.png">
             <p><span class="number">6</span>
                 Okay, giờ ta có một web social đơn giản. <br>
-                Hãy truy cập <a class="href" id="access-robots">http://locahost/robots.txt</a> vào <strong>thanh URL của BookFace</strong><br>
+                Hãy truy cập <a class="href access-robots">http://locahost/robots.txt</a> vào <strong>thanh URL của BookFace</strong><br>
                 Để xem thực sự Website này có sử dụng robots.txt không? <br>
             </p>
         </div>
@@ -87,7 +87,8 @@ Disallow: /test.txt
         <div class="guide ten">
             <img class="symbol" src="images/attacker.png">
             <p><span class="number">10</span>
-                Hãy thử truy cập lại các file Secret
+                <strong>Server đang khởi động lại</strong><br>
+                <a class="href access-robots">Hãy thử truy cập lại các file Secret</a>
             </p>
         </div>
         <div class="guide eleven">
@@ -98,13 +99,14 @@ Disallow: /test.txt
                 <strong>ServerSignature Off <br>
                 ServerTokens Prod </strong><br>
                 Sau đó khởi động lại Apache<br>
-                <a class="href" id="options-OS">Tiến hành thực hiện </a>
+                <a class="href" id="hidden-OS">Tiến hành thực hiện </a>
             </p>
         </div>
         <div class="guide twelve">
             <img class="symbol" src="images/user.png">
             <p><span class="number">12</span>
-                Hãy truy cập lại các file Secret để kiểm chứng.         </div>
+                <strong>Server đang khởi động lại</strong><br>
+                <a class="href access-robots"> Hãy truy cập lại các file Secret để kiểm chứng</a>         </div>
         <div class="guide thirteen">
             <img class="symbol" src="images/user.png">
             <p><span class="number">13</span>
@@ -112,20 +114,7 @@ Disallow: /test.txt
                 Dĩ nhiên là ta không nên lưu những thông tin nhạy cảm trên thư mục gốc của trang web. <br>
                 Dữ liệu nhạy cảm muốn truyền đi phải chắc chắn đã được mã hóa. <br>
                 Và dù vậy vẫn còn nhiều yếu tố cần lưu ý để tránh phơi nhiễm dữ liệu nhạy cảm mà chúng ta sẽ thực hành thêm ở những kịch bản khác.        </div>
-        <div class="guide fourteen">
-            <img class="symbol" src="images/user.png">
-            <p><span class="number">14</span>
-                Sau đó, hãy vào <a class="href exec-brute-force">Terminal</a> và thực thi <strong>CMD</strong><br>
-                <span class="red">php5 crackpassprevent.php</span><br>
-                Để tấn công Brute Force
-            </p>
-        </div>
-        <div class="guide fifteen">
-            <img class="symbol" src="images/user.png">
-            <p><span class="number">15</span>
-                Chúc mừng đã hoàn thành xong kịch bản tấn công <strong>Broken Authentication</strong>
-            </p>
-        </div>
+        
     </div>
 
 </div>

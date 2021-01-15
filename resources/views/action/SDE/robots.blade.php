@@ -15,7 +15,11 @@
             </div>
         </div>
         <div class="contentForm">
+            @if(strpos($text,"DOCTYPE"))
+                {!! $text !!}
+            @else
             <textarea disabled class="robots">{!! $text !!}</textarea>
+            @endif
         </div>
     </div>
 @endsection

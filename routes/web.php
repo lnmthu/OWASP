@@ -13,6 +13,7 @@ Route::prefix('action')->group(function () {
         Route::get('social', 'SDEController@social');
         Route::get('search', 'SDEController@search');
         Route::get('prevent', 'SDEController@prevent');
+        Route::get('hidden', 'SDEController@hidden');
         Route::get("robots/{id}","SDEController@robots");
     });
 
