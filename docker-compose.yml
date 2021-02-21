@@ -1,13 +1,7 @@
 version: "3.7"
 services:
   app:
-    build:
-      args:
-        user: sammy
-        uid: 1000
-      context: ./
-      dockerfile: .docker/Dockerfile
-    image: sensitive-data-exposure
+    image: thuicetea/sensitive-data-exposure:v1
     container_name: sensitive-data-exposure-app
     restart: always
     ports:
