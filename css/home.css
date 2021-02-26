@@ -1,0 +1,66 @@
+#header .container-fluid {
+    padding: 20px 35px;
+}
+#header .collapse {
+    border-bottom: inset gold;
+    border-top-style: inset;
+    border-left: none;
+    border-right: none;
+    padding-bottom: 5px;
+}
+#header .navbar-right {
+    margin-right: 120px;
+}
+#header .navbar-brand {
+    color: gold;
+    font-size: 55px;
+    font-weight: bolder;
+}
+#header .navbar-nav > li > a {
+    color: lightgray;
+    top: 12px;
+    font-size: 16px;
+    font-weight: bolder;
+    padding-bottom: 8px;
+}
+#header .navbar-nav > li > a:hover {
+    color: black;
+    background-color: gold;
+}
+#header .navbar-nav > .active > a {
+    color: gold;
+    background: none;
+    padding-bottom: 8px;
+}
+#content .feature1 img {
+    width: 100%;
+}
+#header .navbar-toggle {
+    background-color: gold;
+    border: 1px solid gold;
+}
+#header .navbar-toggle .icon-bar {
+    background-color: black;
+}
+#footer {
+    padding: 10px;
+    background-image: url("/images/home/bg-footer.png");
+}
+#footer .text-muted{
+    color:white;
+}
+#footer .list-inline .icon-fb{
+    background-color: blue;
+    border-radius: 1em;
+}
+#footer .list-inline .icon-email{
+    background-color: gray;
+    border-radius: 1em;
+}
+#footer .list-inline .icon-git{
+    background-color: cornflowerblue;
+    border-radius: 1em;
+}
+#footer .list-inline>li>a>i{
+    color:white
+}
