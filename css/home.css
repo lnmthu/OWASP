@@ -50,11 +50,11 @@
     color:white;
 }
 #footer .list-inline .icon-fb{
-    background-color: blue;
+    background-color: #3D5A96;
     border-radius: 1em;
 }
 #footer .list-inline .icon-email{
-    background-color: gray;
+    background-color: #2F75EC;
     border-radius: 1em;
 }
 #footer .list-inline .icon-git{
