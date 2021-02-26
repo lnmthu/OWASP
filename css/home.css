@@ -44,7 +44,7 @@
 }
 #footer {
     padding: 10px;
-    background-image: url("/images/home/bg-footer.png");
+    background-image: url("../images/home/bg-footer.png");
 }
 #footer .text-muted{
     color:white;
