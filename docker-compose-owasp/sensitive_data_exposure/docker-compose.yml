@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  app:
+    image: thuicetea/sensitive-data-exposure:v1
+    container_name: sensitive-data-exposure-app
+    restart: always
+    ports: 
+      - 80:80
+    working_dir: /var/www/html
+    networks:
+      - sensitive-data-exposure
+  db:
+    image: mysql:5.7
+    container_name: sensitive-data-exposure-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: laravel
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+      MYSQL_USER: root
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - sensitive-data-exposure
+networks:
+  sensitive-data-exposure:
+    driver: bridge

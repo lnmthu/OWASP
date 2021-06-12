@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+  app:
+    image: thuicetea/xxe:v2
+    container_name: xxe-app
+    restart: always
+    ports:
+      - 80:80
+    working_dir: /var/www/html
+    networks:
+      - xxe
+  db:
+    image: mysql:5.7
+    container_name: xxe-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: xxe
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+      MYSQL_USER: root
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - xxe
+
+networks:
+  xxe:
+    driver: bridge

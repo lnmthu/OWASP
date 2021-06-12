@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+  app:
+    image: thuicetea/reflected-xss:v1
+    container_name: reflected-xss-app
+    restart: always
+    ports:
+      - 80:80
+    working_dir: /var/www/html
+    networks:
+      - reflected-xss
+  db:
+    image: mysql:5.7
+    container_name: reflected-xss-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: rxss
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+      MYSQL_USER: root
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - reflected-xss
+
+networks:
+  reflected-xss:
+    driver: bridge

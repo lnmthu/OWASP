@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+  app:
+    image: thuicetea/sql-injection:v1
+    container_name: sql-injection-app
+    restart: always
+    ports:
+      - 80:80
+    working_dir: /var/www/html
+    networks:
+      - sql-injection
+  db:
+    image: mysql:5.7
+    container_name: sql-injection-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: sqli
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+      MYSQL_USER: root
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - sql-injection
+
+networks:
+  sql-injection:
+    driver: bridge

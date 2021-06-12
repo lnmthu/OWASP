@@ -1,0 +1,36 @@
+version: "3.7"
+services:
+  app:
+    image: thuicetea/broken-authentication:v1
+    container_name: broken-authentication-app
+    restart: always
+    ports: 
+      - 80:80
+    working_dir: /var/www/html
+    networks:
+      - broken-authentication
+  db:
+    image: mysql:5.7
+    container_name: broken-authentication-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: broken_authentication
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+      MYSQL_USER: root
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - broken-authentication
+  terminal:
+    image: thuicetea/broken-authentication-terminal:v3
+    container_name: broken-authentication-terminal
+    restart: always
+    ports: 
+      - 57575:57575
+    working_dir: ""
+    networks:
+      - broken-authentication
+networks:
+  broken-authentication:
+    driver: bridge
